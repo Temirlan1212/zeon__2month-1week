@@ -1,0 +1,99 @@
+.signup {
+  background-color: map-get($map: $clr-primary, $key: 400);
+  height: 100vh;
+  padding: 40px 0 0 0;
+}
+.signup__main-box h2 {
+  color: map-get($map: $clr-light, $key: 500);
+  text-align: center;
+}
+
+.signup__card-box {
+  margin: 100px auto 0 auto;
+  max-width: 450px;
+  width: 100%;
+  background-color: map-get($map: $clr-primary, $key: 300);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  padding: 20px;
+  h3 {
+    color: map-get($map: $clr-light, $key: 500);
+    font-size: 25px;
+    font-family: "Poppins", "sans-serif";
+  }
+}
+
+.signup__form,
+.signin__form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 30px 0 0 0;
+
+  .signup__item {
+    position: relative;
+    svg,
+    img {
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      width: 17px;
+    }
+  }
+
+  button {
+    max-width: 170px;
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 15px;
+    background-color: map-get($map: $clr-light, $key: 500);
+    color: map-get($map: $clr-primary, $key: 400);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  button:hover {
+    background-color: aliceblue;
+  }
+}
+
+.signup__form-inp {
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 0px 0 40px;
+  background-color: map-get($map: $clr-primary, $key: 400);
+  border: none;
+  margin-bottom: 7px;
+  color: white;
+  width: 100%;
+}
+.redirect-register,
+.redirect-main {
+  text-decoration: none;
+  color: map-get($map: $clr-light, $key: 500);
+  opacity: 70%;
+  margin-top: 5px;
+}
+.redirect-register:hover,
+.redirect-main:hover {
+  color: white;
+}
+
+.redirect-main {
+  margin-left: 5px;
+}
+.redirect__box {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .signup__form {
+    width: 100%;
+  }
+}

@@ -1,0 +1,36 @@
+*,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+input:focus {
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.9);
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+$clr-primary: (
+  300: #2a2b38,
+  400: #1f2029,
+);
+
+$clr-light: (
+  400: #dfdee5,
+  500: #e0ebffdc,
+);
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+}
