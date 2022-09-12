@@ -46,10 +46,17 @@ let clearInput = () => {
 };
 
 let register = async (user: IUserRegistrationForm) => {
-  let { data } = await axios.post<IAuthResponse>(API, user);
-  setTokenToStorage(data?.token);
-  clearInput();
-  return data;
+  await axios
+    .post<IAuthResponse>(API, user)
+    .then((res) => {
+      setTokenToStorage(res.data?.token);
+      clearInput();
+      window.location.href = "index.html";
+      return res.data;
+    })
+    .catch((error) => {
+      alert(error.response.data);
+    });
 };
 
 let setTokenToStorage = (token: string) => {

@@ -1,5 +1,5 @@
 import axios from "axios";
-let API = "http://localhost:1717/logi";
+let API = "http://localhost:1717/login";
 let signin_form = document.querySelector(".signin__form") as HTMLFormElement;
 let email_inp_signin = <HTMLInputElement>document.querySelector(".signin__form-email");
 let password_inp_signin = <HTMLInputElement>document.querySelector(".signin__form-password");
@@ -24,7 +24,6 @@ let checkInput = () => {
     alert("Пороль должен состоять минимум из 6 символов");
   }
 };
-
 let getValueInp = () => {
   let user = {
     username: email_inp_signin.value,
@@ -37,9 +36,28 @@ let clearInput = () => {
 };
 
 let signIn = async (user: IUserLogInForm) => {
-  let { data } = await axios.post<IAuthResponse>(API, user);
-  setTokenToStorage(data.token);
-  clearInput();
+  // await axios.post<IAuthResponse>(API, user).catch((res) => {
+  //   alert(res.response.data + "/ no accaount with such username");
+  // });
+
+  // let { data } = await axios.post<IAuthResponse>(API, user);
+
+  // setTokenToStorage(data.token);
+  // console.log(data);
+  // clearInput();
+  // window.location.href = "index.html";
+
+  await axios
+    .post<IAuthResponse>(API, user)
+    .then((res) => {
+      setTokenToStorage(res.data?.token);
+      clearInput();
+      window.location.href = "index.html";
+      return res.data;
+    })
+    .catch((error) => {
+      alert(error.response.data + " OR no accaount with such username");
+    });
 };
 
 let setTokenToStorage = (token: string) => {

@@ -17,8 +17,15 @@ a {
   text-decoration: none;
   color: white;
 }
+dl,
+ol,
+ul {
+  margin: 0;
+  list-style-type: none;
+}
 
 $clr-primary: (
+  200: #302f3f,
   300: #2a2b38,
   400: #1f2029,
 );
@@ -27,7 +34,11 @@ $clr-light: (
   400: #dfdee5,
   500: #e0ebffdc,
 );
-
+$clr-orange: (
+  200: #fbe0d0,
+  300: #e79899,
+  400: linear-gradient(to right, rgba(243, 127, 127, 0.5), rgba(148, 75, 140, 0.5)),
+);
 .container {
   max-width: 1200px;
   width: 100%;

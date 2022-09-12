@@ -1,18 +1,10 @@
 @import "./helpers/basic.scss";
 @import "./pages/signup/signup.scss";
 @import "./pages/signin/signin.scss";
+@import "./pages/books/books.scss";
+@import "./pages/signout/signout.scss";
+@import "./pages/details/details.scss";
 
 body {
   background-color: map-get($map: $clr-primary, $key: 400);
-}
-
-.hero {
-  margin: 200px auto 0 auto;
-  display: flex;
-  justify-content: center;
-  a {
-    font-size: 40px;
-    margin-right: 20px;
-    font-family: "Poppins", sans-serif;
-  }
 }
