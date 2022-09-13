@@ -1,9 +1,9 @@
 @import "./helpers/basic.scss";
 @import "./pages/signup/signup.scss";
 @import "./pages/signin/signin.scss";
-@import "./pages/books/books.scss";
+@import "./pages/home/books/books.scss";
 @import "./pages/signout/signout.scss";
-@import "./pages/details/details.scss";
+@import "./pages/home/details/details.scss";
 
 body {
   background-color: map-get($map: $clr-primary, $key: 400);

@@ -49,6 +49,17 @@
   flex-wrap: wrap;
   gap: 4px 30px;
 }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+.card-header img {
+  cursor: pointer;
+}
+.card-header img:active {
+  transform: scale(0.9);
+}
+
 .hero__card {
   background-color: rgba(0, 0, 0, 0);
   color: map-get($map: $clr-orange, $key: 300) !important;

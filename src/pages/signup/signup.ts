@@ -18,12 +18,13 @@ interface IAuthResponse {
   data: IUserRegistrationForm;
 }
 
-signup_form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkInput();
+signup_form &&
+  signup_form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    checkInput();
 
-  getTokenFromStorage() ? (alert("вы уже зашли в свой аккаунт"), clearInput()) : register(getValueInp());
-});
+    getTokenFromStorage() ? (alert("вы уже зашли в свой аккаунт"), clearInput()) : register(getValueInp());
+  });
 
 let checkInput = () => {
   if (password_inp_signup.value.length < 6) {
