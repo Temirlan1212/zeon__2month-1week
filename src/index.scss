@@ -1,9 +1,10 @@
 @import "./helpers/basic.scss";
-@import "./pages/signup/signup.scss";
-@import "./pages/signin/signin.scss";
-@import "./pages/home/books/books.scss";
-@import "./pages/signout/signout.scss";
-@import "./pages/home/details/details.scss";
+@import "./styles/signup.scss";
+@import "./styles/signin.scss";
+@import "./styles/books.scss";
+@import "./styles/signout.scss";
+@import "./styles/details.scss";
+@import "./styles/addBook.scss";
 
 body {
   background-color: map-get($map: $clr-primary, $key: 400);

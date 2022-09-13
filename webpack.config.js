@@ -15,6 +15,9 @@ module.exports = {
     hot: true,
   },
   entry: path.resolve(__dirname, "src", "index.ts"),
+  resolve: {
+    extensions: [".js", ".json", ".wasm", ".ts"],
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     clean: {
@@ -26,12 +29,16 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/pages/signup", "signup.html"),
+      template: path.resolve(__dirname, "src/pages/Signup", "signup.html"),
       filename: "signup.html",
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/pages/signin", "signin.html"),
+      template: path.resolve(__dirname, "src/pages/Signin", "signin.html"),
       filename: "signin.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src/pages/AddBook", "addBook.html"),
+      filename: "addBook.html",
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),

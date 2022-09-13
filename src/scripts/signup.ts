@@ -27,7 +27,7 @@ signup_form &&
   });
 
 let checkInput = () => {
-  if (password_inp_signup.value.length < 6) {
+  if (password_inp_signup.value.length < 6 || password_inp_signup) {
     alert("Пороль должен состоять минимум из 6 символов");
   }
 };
