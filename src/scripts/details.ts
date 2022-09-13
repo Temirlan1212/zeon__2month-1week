@@ -1,15 +1,13 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { BooksResponse } from "../helpers/interfaces";
-let API = "http://localhost:1717/books";
+import { BooksResponse, API } from "../helpers/interfaces";
 
 export let details = async (id: string, config: AxiosRequestConfig<any>) => {
-  let { data } = await axios.get<BooksResponse>(`${API}/${id}`, config);
+  let { data } = await axios.get<BooksResponse>(`${API}/books/${id}`, config);
   console.log(data);
 
   let modal = document.querySelector(".details__main-box") as HTMLDivElement;
   modal.style.transform = "scale(1)";
   modal.innerHTML = "";
-  // let div= document.createElement("div")
 
   modal.innerHTML = `<div class="modal-section">
     <span class="details__modal-exit"> &#10005;</span>

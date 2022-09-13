@@ -1,5 +1,6 @@
 import "./index.html";
 import "./index.scss";
+import "./scripts/deleteBook.ts";
 import "./scripts/details.ts";
 import "./scripts/signout.ts";
 import "./scripts/books.ts";

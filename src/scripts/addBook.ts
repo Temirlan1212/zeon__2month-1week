@@ -1,5 +1,5 @@
 // let selected = document.querySelector(".choosen-select") as HTMLFormElement;
-import { API, BooksResponse } from "../helpers/interfaces";
+import { API, BooksResponse, config, token } from "../helpers/interfaces";
 import axios, { AxiosRequestConfig } from "axios";
 
 let addB_form = document.querySelector(".addBook__form") as HTMLFormElement;
@@ -11,23 +11,20 @@ let addB_house = document.querySelector(".addBook__form-house") as HTMLInputElem
 let addB_pages = document.querySelector(".addBook__form-pages") as HTMLInputElement;
 let addB_genres = document.querySelector(".addBook__form-genres") as HTMLInputElement;
 let addB_language = document.querySelector(".addBook__form-language") as HTMLInputElement;
+let addB_img = document.querySelector(".addBook__form-img") as HTMLInputElement;
 
 let addB_title = document.querySelector(".addBook__title") as HTMLTitleElement;
-
-let token = localStorage.getItem("token");
 
 addB_form?.addEventListener("submit", (e) => {
   e.preventDefault();
   createBook();
+  clearInput();
+
+  window.location.href = "index.html";
 });
+
 let createBook = async () => {
   console.log(getValueInp());
-  const config = {
-    headers: {
-      "X-Auth": token,
-    },
-  } as AxiosRequestConfig<any>;
-
   let { data } = await axios.post<BooksResponse>(`${API}/books/create`, getValueInp(), config);
   console.log(data);
 };
@@ -41,15 +38,21 @@ let getValueInp = <BooksResponse>() => {
     publishHouse: addB_house.value,
     pagesNumber: +addB_pages.value,
     genres: addB_genres.value.split(","),
+    img: addB_img.value,
     originalLanguage: addB_language.value,
   };
   return user;
 };
 
 let clearInput = () => {
-  // return {
-  //  addB_author.v
-  // }
+  addB_name.value = "";
+  addB_author.value = "";
+  addB_year.value = "";
+  addB_house.value = "";
+  addB_pages.value = "";
+  addB_genres.value = "";
+  addB_img.value = "";
+  addB_language.value = "";
 };
 
 console.log(addB_form);
