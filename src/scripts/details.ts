@@ -7,6 +7,7 @@ export let details = async (id: string, config: AxiosRequestConfig<any>) => {
 
   let modal = document.querySelector(".details__main-box") as HTMLDivElement;
   modal.style.transform = "scale(1)";
+  modal.style.transition = "all 0.3s ease-in-out";
   modal.innerHTML = "";
 
   modal.innerHTML = `<div class="modal-section">
@@ -37,5 +38,6 @@ export let details = async (id: string, config: AxiosRequestConfig<any>) => {
   let close_btn = document.querySelector(".details__modal-exit ") as HTMLDivElement;
   close_btn.addEventListener("click", () => {
     modal.style.transform = "scale(0)";
+    modal.style.transition = "all 0s ease-in-out";
   });
 };

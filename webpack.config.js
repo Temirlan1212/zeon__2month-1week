@@ -29,16 +29,20 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/pages/Signup", "signup.html"),
+      template: path.resolve(__dirname, "src/pages", "signup.html"),
       filename: "signup.html",
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/pages/Signin", "signin.html"),
+      template: path.resolve(__dirname, "src/pages", "signin.html"),
       filename: "signin.html",
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/pages/AddBook", "addBook.html"),
+      template: path.resolve(__dirname, "src/pages", "addBook.html"),
       filename: "addBook.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src/pages", "updateBook.html"),
+      filename: "updateBook.html",
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),

@@ -27,7 +27,8 @@
 
 .signup__form,
 .signin__form,
-.addBook__form {
+.addBook__form,
+.updateBook__form {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -66,7 +67,7 @@
 .signup__form-inp {
   height: 40px;
   border-radius: 20px;
-  padding: 0 0px 0 40px;
+  padding: 0 15px 0 40px;
   background-color: map-get($map: $clr-primary, $key: 400);
   border: none;
   margin-bottom: 7px;

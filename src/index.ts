@@ -6,4 +6,5 @@ import "./scripts/signout.ts";
 import "./scripts/books.ts";
 import "./scripts/signin.ts";
 import "./scripts/signup.ts";
+import "./scripts/updateBook.ts";
 import "./scripts/addBook.ts";

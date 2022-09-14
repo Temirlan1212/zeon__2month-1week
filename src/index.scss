@@ -5,6 +5,7 @@
 @import "./styles/books.scss";
 @import "./styles/signout.scss";
 @import "./styles/details.scss";
+@import "./styles/updateBook.scss";
 
 body {
   background-color: map-get($map: $clr-primary, $key: 400);
