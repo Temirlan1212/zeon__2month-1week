@@ -40,10 +40,7 @@ module.exports = {
       template: path.resolve(__dirname, "src/pages", "addBook.html"),
       filename: "addBook.html",
     }),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src/pages", "updateBook.html"),
-      filename: "updateBook.html",
-    }),
+
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
       filename: "index.html",

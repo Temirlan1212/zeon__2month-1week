@@ -21,17 +21,13 @@ interface IAuthResponse {
 signup_form &&
   signup_form.addEventListener("submit", (e) => {
     e.preventDefault();
-    checkInput();
+    if (password_inp_signup.value.length < 6) {
+      alert("Пороль должен состоять минимум из 6 символов");
+      return;
+    }
 
     getTokenFromStorage() ? (alert("вы уже зашли в свой аккаунт"), clearInput()) : register(getValueInp());
   });
-
-let checkInput = () => {
-  if (password_inp_signup.value.length < 6 || password_inp_signup) {
-    alert("Пороль должен состоять минимум из 6 символов");
-    return;
-  }
-};
 
 let getValueInp = () => {
   let user = {

@@ -10,6 +10,7 @@
   align-items: center;
   height: 100vh;
   transform: scale(0);
+  padding: 0 10px;
   // transition: all 0.3s ease-in-out;
 }
 .modal-section {
@@ -22,7 +23,6 @@
   // border: 1px solid rgba(231, 152, 153, 0.5);
   border-radius: 8px;
   padding: 2rem 2rem;
-  margin-top: 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -59,6 +59,7 @@
 .details__modal-texts {
   display: flex;
   span {
+    // width: 110px;
     color: white;
     // color: map-get($map: $clr-orange, $key: 300);
   }
@@ -73,6 +74,7 @@
 .details__modal-country {
   display: flex;
   span {
+    // width: 110px;
     color: white;
     // color: map-get($map: $clr-orange, $key: 300);
   }
@@ -88,17 +90,21 @@
   display: flex;
   align-items: flex-start;
   span {
-    margin-right: 5px;
-    height: 40px;
     color: white;
+    // width: 110px;
     // color: map-get($map: $clr-orange, $key: 300);
   }
   p {
     background-image: map-get($map: $clr-orange, $key: 400);
     border-radius: 4px;
-    margin-right: 10px;
+    margin-left: 5px;
     padding: 0 5px;
     color: white;
+    max-width: 120px;
+  }
+  .details__genres-texts {
+    display: flex;
+    flex-wrap: wrap;
   }
   //   p:not(:last-child):after {
   //     content: "/";
@@ -109,6 +115,7 @@
   display: flex;
   span {
     color: white;
+    // width: 110px;
     // color: map-get($map: $clr-orange, $key: 300);
   }
   p {
@@ -122,6 +129,7 @@
 .details__modal-year {
   display: flex;
   span {
+    // width: 110px;
     color: white;
     // color: map-get($map: $clr-orange, $key: 300);
   }
@@ -131,5 +139,31 @@
     margin-right: 10px;
     padding: 0 5px;
     color: white;
+  }
+}
+
+@media (max-width: 468px) {
+  .modal-section {
+    height: auto;
+  }
+  .modal-section div {
+    flex-direction: column;
+  }
+
+  .modal-section div p {
+    flex-direction: column;
+    justify-content: center;
+    display: block;
+  }
+
+  .details__modal-genres p {
+    margin: 0px 0px 10px 0;
+  }
+  .details__genres-texts {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  .details__genres-texts p {
+    display: block;
   }
 }
